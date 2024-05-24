@@ -1,18 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  justify-content: flex-start;
+  background-color: black;
+}
+
+hr {
+  background-color: #feb404;
+  border-color: #feb404;
+}
+
+a {
+  color: #feb404;
+  text-decoration: none;
+}
+
+h1 {
+  color: #feb404;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 header {
   align-content: flex-start;
 }
 
-table, th, td {
-  width: 100%;
-  border: 0.25px solid #feb404;
-  border-collapse: collapse;
+th {
+  width: 15%;
+  border-bottom: 1px solid #feb404;
+  text-transform: uppercase; 
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+td {
+  width: 35%;
+  border-bottom: 0.25px solid #feb404;
+  text-align: left;
+}
+
+.numbers {
+  width: 20%;
+}
+
+.string {
+  width: 25%;
 }
 
 tr:hover {
