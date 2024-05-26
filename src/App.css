@@ -13,6 +13,7 @@ main {
 hr {
   background-color: #feb404;
   border-color: #feb404;
+  width: 50%;
 }
 
 a {
@@ -23,11 +24,10 @@ a {
 h1 {
   color: #feb404;
   text-transform: uppercase;
-  margin-bottom: 0;
 }
 
-header {
-  align-content: flex-start;
+table {
+  background-color: ;
 }
 
 th {
