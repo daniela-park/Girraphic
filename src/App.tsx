@@ -1,8 +1,7 @@
 import './App.css'
-import Data from "../src/MarathonResults.json";
-import Running from "/running.gif"
-import Table from './components/Table';
-import NavBarTop from './components/NavBarTop';
+import ResultsTable from './components/ResultsTable/ResultsTable';
+import ExportButton from "./components/ExportButton/ExportButton";
+// import NavBarTop from './components/NavBarTop';
 
 // https://girraphic.com/about/
 
@@ -13,17 +12,12 @@ function App() {
 
       {/* <NavBarTop></NavBarTop> */}
 
-      <header>
-      <h1>
-        <img src={Running} height="50px" alt="Animated gif of a person running" />
-        {} {Data.results.racename}
-        </h1>
-      </header>
-      <hr />
-
-      <Table />
+      <ResultsTable />
 
       <hr />
+
+      <ExportButton />
+
       <footer>
         <p>
           Designed by <a href="https://daniela-park.github.io/portfolio/">Daniela Park</a>

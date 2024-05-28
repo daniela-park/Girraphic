@@ -4,6 +4,7 @@
 
 :root {
   font-family: 'Montserrat';
+  font-size: 2vh;
   line-height: 1;
   font-weight: 100;
   overflow: hidden;
@@ -21,7 +22,7 @@
   a:hover {
     color: #747bff;
   }
-  button {
+  /* button {
     background-color: #f9f9f9;
-  }
+  } */
 }

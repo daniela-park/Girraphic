@@ -1,0 +1,15 @@
+th {
+    background-color: #feb404;
+}
+
+th img.asc {
+    transform: rotate(0deg);
+}
+
+th img.desc {
+    transform: rotate(180deg);
+}
+
+td {
+    padding: 1vh
+}

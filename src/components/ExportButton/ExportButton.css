@@ -1,0 +1,11 @@
+button {
+    background-color: #feb404;
+    width: 25vw;
+    height: 5vh;
+    border-radius: 5vh;
+}
+
+button:hover {
+    background-color: #feb404;
+    opacity: 65%;
+}
