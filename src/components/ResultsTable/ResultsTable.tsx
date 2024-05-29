@@ -12,7 +12,7 @@ function ResultsTable() {
   const [arrowAlt, setArrowAlt] = useState("Arrow down icon")
 
   const handleOnSorting = () => {
-    if (order === "asc") {
+    if (order === "asc" && sortedData) {
       const sortedData = [...Data.results.athletes.map(d => d.rank)]
       .sort((a: any, b: any) => a > b ? 1 : -1);
       setSortedData(sortedData);
