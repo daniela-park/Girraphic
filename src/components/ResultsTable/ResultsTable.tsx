@@ -2,70 +2,45 @@ import "./ResultsTable.css"
 import Data from "../../MarathonResults.json";
 import { useState } from "react";
 import Running from "/running.gif";
-import ArrowUp from "/ArrowUp.png";
-import ArrowDown from "/ArrowDown.png";
+import ArrowUp from "/ArrowSortUp.svg";
+import ArrowDown from "/ArrowSortDown.svg";
+import ArrowUpDown from "/ArrowSort.svg";
 
 function ResultsTable() {
-  const [sortedData, setSortedData] = useState(Data.results.athletes.map(d => d.rank))
-  const [order, setOrder] = useState("asc")
-  const [arrow, setArrow] = useState(ArrowDown)
-  const [arrowAlt, setArrowAlt] = useState("Arrow down icon")
-
-  const handleOnSorting = () => {
-    if (order === "asc" && sortedData) {
-      const sortedData = [...Data.results.athletes.map(d => d.rank)]
-      .sort((a: any, b: any) => a > b ? 1 : -1);
-      setSortedData(sortedData);
-      setOrder("desc");
-      setArrow(ArrowUp);
-      setArrowAlt("Arrow up icon")
+  const [athletes, setAthletes] = useState(Data.results.athletes);
+  const [sortColumn, setSortColumn] = useState<"rank" | "bibnumber">();
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">();
+  
+  const handleOnRankSorting = () => {
+    if (sortColumn === "rank" && sortOrder === "asc") {
+      setSortColumn("rank");
+      setSortOrder("desc");
+      const sortedAthletes = [...athletes].sort((a, b) => a.rank - b.rank);
+      setAthletes(sortedAthletes);
     }
-    if (order === "desc") {
-      const sortedData = [...Data.results.athletes.map(d => d.rank)]
-      .sort((a: any, b: any) => a < b ? 1 : -1);
-      setSortedData(sortedData);
-      setOrder("asc");
-      setArrow(ArrowDown);
-      setArrowAlt("Arrow down icon")
+    else {
+      setSortColumn("rank");
+      setSortOrder("asc");
+      const sortedAthletes = [...athletes].sort((a, b) => b.rank - a.rank);
+      setAthletes(sortedAthletes);
     }
   }
 
-  // const rankData = data.results.athletes.map(d => d.rank)
-  // const handleOnRankSorting = (rankData: any) => {
-  //   if (order === "asc") {
-  //     const sorted = rankData.sort((a: any, b: any) => a[rankData] > b[rankData] ? 1 : -1)
-  //     setData(sorted);
-  //     setOrder("desc");
-  //     setArrow(ArrowDown);
-  //     setArrowAlt("Arrow down icon");
-  //   }
-  //   if (order === "desc") {
-  //     const sorted = rankData.sort((a: any, b: any) => a[rankData] < b[rankData] ? 1 : -1)
-  //     setData(sorted);
-  //     setOrder("asc");
-  //     setArrow(ArrowUp);
-  //     setArrowAlt("Arrow up icon");
-  //   }
-  // }
+  const handleOnBibSorting = () => {
+    if (sortColumn === "bibnumber" && sortOrder === "asc") {
+      setSortColumn("bibnumber");
+      setSortOrder("desc");
+      const sortedAthletes = [...athletes].sort((a, b) => parseInt(a.bibnumber) - parseInt(b.bibnumber));
+      setAthletes(sortedAthletes);
+    }
+    else {
+      setSortColumn("bibnumber");
+      setSortOrder("asc");
+      const sortedAthletes = [...athletes].sort((a, b) => parseInt(b.bibnumber) - parseInt(a.bibnumber));
+      setAthletes(sortedAthletes);
+    }
+  }
 
-  // const bibData = data.results.athletes.map(d => d.bibnumber)
-  // const handleOnBibSorting = (bibData: any) => {
-  //   if (order === "asc") {
-  //     const sorted = bibData.sort((a: any, b: any) => a[bibData] > b[bibData] ? 1 : -1)
-  //     setData(sorted);
-  //     setOrder("desc");
-  //     setArrow(ArrowDown);
-  //     setArrowAlt("Arrow down icon");
-  //   }
-  //   if (order === "desc") {
-  //     const sorted = bibData.sort((a: any, b: any) => a[bibData] < b[bibData] ? 1 : -1)
-  //     setData(sorted);
-  //     setOrder("asc");
-  //     setArrow(ArrowUp);
-  //     setArrowAlt("Arrow up icon");
-  //   }
-  // }
-  
 
   return (
     <div className="table-container">
@@ -79,30 +54,38 @@ function ResultsTable() {
       </header>
       <table>
         <thead>
-          {/* <th className="sortable-th" onClick={handleOnRankSorting}>Rank */}
-          <th className="sortable-th" onClick={() => handleOnSorting()}>Rank
-            <img src={arrow} alt={arrowAlt}/>
+          <th className="sortable-th" onClick={() => handleOnRankSorting()}>Rank
+            <img src={sortColumn === "rank"
+              ? sortOrder === "desc"
+                ? ArrowUp
+                : ArrowDown
+              : ArrowUpDown
+            } alt="Sorted arrow icon"/>
           </th>
-          {/* <th className="sortable-th" onClick={handleOnBibSorting}>Bib Number */}
-          <th className="sortable-th" onClick={() => handleOnSorting()}>Bib Number
-            <img src={arrow} alt={arrowAlt}/>
+          <th className="sortable-th" onClick={() => handleOnBibSorting()}>Bib Number
+            <img src={sortColumn === "bibnumber"
+              ? sortOrder === "desc"
+                ? ArrowUp
+                : ArrowDown
+              : ArrowUpDown
+            } alt="Sorted arrow icon"/>
           </th>
           <th>Finish Time</th>
           <th>Name</th>
           <th>Country</th>
         </thead>
         <tbody>
-          {Data && Data.results.athletes.map((d) => (
-            <tr key={d.athleteid}>
-              <td className="numbers">{d.rank}</td>
-              <td className="numbers">{d.bibnumber}</td>
-              <td className="numbers">{d.finishtime}</td>
-              <td className="string">{`${d.surname.toUpperCase()}, ${d.firstname}`}</td>
-              <td className="string">{d.flag} { }
+          {athletes && athletes.map((a) => (
+            <tr key={a.athleteid}>
+              <td className="numbers">{a.rank}</td>
+              <td className="numbers">{a.bibnumber}</td>
+              <td className="numbers">{a.finishtime}</td>
+              <td className="string">{`${a.surname.toUpperCase()}, ${a.firstname}`}</td>
+              <td className="string">{a.flag} { }
                 <img
-                  src={`https://assets.thebasetrip.com/api/v2/countries/flags/${d.countryname.toLowerCase().replace(' ', '-')}.png`}
+                  src={`https://assets.thebasetrip.com/api/v2/countries/flags/${a.countryname.toLowerCase().replace(' ', '-')}.png`}
                   height="15px"
-                  alt={`${d.countryname}'s flag`} />
+                  alt={`${a.countryname}'s flag`} />
               </td>
             </tr>
           ))}
