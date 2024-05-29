@@ -3,18 +3,41 @@
 }
 
 :root {
-  font-family: 'Montserrat';
-  font-size: 2vh;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 100;
-  overflow: hidden;
+  overflow-x: hidden;
 
   color-scheme: light dark;
-  color: #feb404;
-  background-color: black;
+  color: white;
+  background-color: #121212;
 }
 
-@media (prefers-color-scheme: light) {
+main {
+  /* background-color: #121212; */
+  background: linear-gradient(to top, #121212, 85%, #feb404)
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Large Screen Mobiles*/
+@media screen and (max-width: 500px) {
+  :root {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small Screen Mobiles*/
+@media screen and (max-width: 350px) {
+  :root {
+    font-size: 0.5rem;
+  }
+}
+
+/* @media (prefers-color-scheme: light) {
   :root {
     color: white;
     background-color: black;
@@ -22,7 +45,7 @@
   a:hover {
     color: #747bff;
   }
-  /* button {
+  button {
     background-color: #f9f9f9;
-  } */
-}
+  }
+} */
