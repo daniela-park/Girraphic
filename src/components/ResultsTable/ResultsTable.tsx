@@ -92,7 +92,6 @@ function ResultsTable() {
         </tbody>
       </table>
     </div>
-
   )
 }
 
