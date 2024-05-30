@@ -41,7 +41,6 @@ function ResultsTable() {
     }
   }
 
-
   return (
     <div className="table-container">
       <header>
@@ -49,7 +48,7 @@ function ResultsTable() {
           <img src={Running} height="50px" alt="Animated gif of a person running" />
           { } {Data.results.racename}
           {" | "} {Data.results.gender.toLowerCase() === "male" ? "Men" : "Woman"}
-          {" - "} {new Date(`${Data.results.tod}`).toLocaleString("lookup")}
+          {" - "} {new Date(`${Data.results.tod}`).toLocaleString("lookup").slice(0,10)}
         </h1>
       </header>
       <table>
@@ -96,3 +95,7 @@ function ResultsTable() {
 }
 
 export default ResultsTable
+function moment(marathonDate: number) {
+  throw new Error("Function not implemented.");
+}
+

@@ -5,14 +5,18 @@ function NavBar() {
 
     return (
         <div className="navbar-container">
-            <a href="https://girraphic.com/about/">
-                <img src={GirraphicLogo} alt="Girraphic logo"/>
-            </a>
-            <a href="#">Link1</a>
-            <a href="#">link2</a>
-            <a href="https://daniela-park.github.io/portfolio/">Contact</a>
+            <div className="logo">
+                <a href="https://girraphic.com/">
+                    <img src={GirraphicLogo} alt="Girraphic logo" />
+                </a>
+            </div>
+            <div className="links">
+                <a href="https://daniela-park.github.io/portfolio/">Work</a>
+                <a href="https://github.com/daniela-park">Services</a>
+                <a href="https://www.linkedin.com/in/daniela-park/">Contact</a>
+            </div>
         </div>
     )
 }
 
-export default NavBar
+export default NavBar;

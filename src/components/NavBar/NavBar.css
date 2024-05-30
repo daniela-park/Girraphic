@@ -3,17 +3,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
 }
 
-.navbar-container img {
+.logo img {
     height: 4vh;
     margin: 3vh;
 }
 
-.navbar-container a {
-    margin: 3vh;
-    text-align: left;
+.links a {
+    margin: 3vw;
     color: white;
     text-transform: uppercase;
     font-size: 1.5vh;
