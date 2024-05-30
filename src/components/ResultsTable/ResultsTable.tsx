@@ -95,7 +95,4 @@ function ResultsTable() {
 }
 
 export default ResultsTable
-function moment(marathonDate: number) {
-  throw new Error("Function not implemented.");
-}
 
