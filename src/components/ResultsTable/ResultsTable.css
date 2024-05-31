@@ -52,13 +52,12 @@ tr:hover {
 }
 
 /* Tablets*/
-@media screen and (max-width: 825px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
+@media screen and (max-width: 768px) {
     .table-container {
         width: 100%;
+    }
+    .table-container h1 {
+        font-size: 2rem;
     }
 
     th {
@@ -67,20 +66,14 @@ tr:hover {
 }
 
 /* Large Screen Mobiles*/
-@media screen and (max-width: 500px) {
-    h1 {
-        font-size: 1rem;
-    }
+@media screen and (max-width: 624px) {
     h1 img {
         height: 4vh;
     }
 }
 
 /* Small Screen Mobiles*/
-@media screen and (max-width: 375px) {
-    h1 {
-        font-size: 0.5rem;
-    }
+@media screen and (max-width: 480px) {
     h1 img {
         height: 3vh;
     }
@@ -91,12 +84,5 @@ tr:hover {
 
     td img {
         height: 10px;
-    }
-}
-
-/* Extra Small Screen Mobiles*/
-@media screen and (max-width: 350px) {
-    h1 img {
-        height: 2vh;
     }
 }

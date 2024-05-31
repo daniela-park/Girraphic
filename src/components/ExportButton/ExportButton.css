@@ -13,29 +13,22 @@ button:hover {
 }
 
 /* Tablets*/
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 768px) {
     button {
         width: 40vw;
     }
 }
 
 /* Large Screen Mobiles*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 624px) {
     button {
         width: 50vw;
     }
 }
 
 /* Small Screen Mobiles*/
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     button {
         width: 60vw;
-    }
-}
-
-/* Extra Small Screen Mobiles*/
-@media screen and (max-width: 350px) {
-    button {
-        width: 70vw;
     }
 }

@@ -8,15 +8,12 @@
   line-height: 1;
   font-weight: 100;
   overflow-x: hidden;
-
   color-scheme: light dark;
   color: white;
-  /* background: linear-gradient(to top, #121212, 85%, #feb404) */
   background-color: #121212;
 }
 
 main {
-  /* background-color: #121212; */
   background: linear-gradient(to top, #121212, 85%, #feb404)
 }
 
@@ -25,28 +22,19 @@ a {
 }
 
 /* Large Screen Mobiles*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 624px) {
   :root {
     font-size: 0.75rem;
   }
+  main {
+    background: linear-gradient(to top, #121212, 95%, #feb404)
+  }
 }
+
 
 /* Small Screen Mobiles*/
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 480px) {
   :root {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: white;
-    background-color: black;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
