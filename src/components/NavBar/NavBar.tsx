@@ -14,6 +14,7 @@ function NavBar() {
                 <a href="https://daniela-park.github.io/portfolio/">Work</a>
                 <a href="https://github.com/daniela-park">Services</a>
                 <a href="https://www.linkedin.com/in/daniela-park/">Contact</a>
+                <a href="https://github.com/daniela-park/Girraphic">Repository</a>
             </div>
         </div>
     )

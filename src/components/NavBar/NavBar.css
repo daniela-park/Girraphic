@@ -12,14 +12,14 @@
 }
 
 .links a {
-    margin: 3vw;
+    margin: 2.5vw;
     color: white;
     text-transform: uppercase;
     font-size: 1.5vh;
 }
 
 /* Large Screen Mobiles*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 525px) {
     .navbar-container img {
         height: 3vh;
         margin: 1vh;
@@ -27,14 +27,18 @@
     .navbar-container a {
         margin: 2vh;
     }
+
+    .links a {
+        margin: 2vw;
+    }
 }
 
 /* Small Screen Mobiles*/
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 475px) {
     .navbar-container {
         flex-direction: column;
     }
     .navbar-container a {
-        margin: 1vh;
+        margin: 1vw;
     }
 }
