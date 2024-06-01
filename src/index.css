@@ -21,6 +21,13 @@ a {
   text-decoration: none;
 }
 
+/* Tablets*/
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 0.85rem;
+  }
+}
+
 /* Large Screen Mobiles*/
 @media screen and (max-width: 624px) {
   :root {
@@ -30,7 +37,6 @@ a {
     background: linear-gradient(to top, #121212, 95%, #feb404)
   }
 }
-
 
 /* Small Screen Mobiles*/
 @media screen and (max-width: 480px) {
